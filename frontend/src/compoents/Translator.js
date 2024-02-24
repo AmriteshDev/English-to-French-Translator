@@ -10,7 +10,7 @@ const Translator = () => {
     const translator = async () => {
         setLoading(true)
         try {
-            const responce = await fetch("app/api/v1/translator", {
+            const responce = await fetch("api/v1/translator", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
