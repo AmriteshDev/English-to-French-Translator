@@ -1,16 +1,18 @@
 import React, { Fragment, useState } from 'react'
 import '../App.css';
 import Loader from './Loader';
+import axios from 'axios'
 
 const Translator = () => {
 
     const [englishtext, setEnglishText] = useState("");
     const [loading, setLoading] = useState(false);
     const [translatedText, setTranslatedText] = useState("");
+    axios.defaults.withCredentials = true;
     const translator = async () => {
         setLoading(true)
         try {
-            const responce = await fetch("api/v1/translator", {
+            const responce = await fetch("https://translator-api-gold.vercel.app/api/v1/translator", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
